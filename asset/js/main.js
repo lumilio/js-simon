@@ -26,32 +26,6 @@ let clock;
 
 
 
-//funzioni utility
-function randomInterval(min, max) { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-function removeDuplicate(params) {
-    return params.filter((value, index) => params.indexOf(value) === index)
-}
-
-function incrementSeconds() {
-    seconds --;
-    console.log(seconds);
-    timerBox.innerHTML = seconds;
-    if (seconds < 0) {
-        clearInterval(clock)
-        for (let i = 0; i < theNumbers.length; i++) {
-            const input = Number(prompt('inserisci un numero che hai visto'));
-            if(theNumbers.includes(input)){
-                trueNumbers.push(input);
-            }
-        }
-    }
-}
-
-
-
 //genero 5 numeri casuali 
 let number='';
 for (let i = 0; i < 5; i++) {
@@ -64,16 +38,44 @@ console.log(theNumbers);
 
 
 
+
+//aggiungo interattività al pulsante 
 playButton.addEventListener('click', function () {
     playButton.classList.add('d-none')
     timerBox.classList.remove('d-none')
     clock = setInterval(incrementSeconds, 1000); 
 })
-    
 
 
 
 
+//funzioni utility
+function randomInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function removeDuplicate(params) {
+    return params.filter((value, index) => params.indexOf(value) === index)
+}
+
+
+
+
+
+function incrementSeconds() {
+    seconds --;
+    console.log(seconds);
+    timerBox.innerHTML = seconds;
+    if (seconds <= 0) {
+        clearInterval(clock);
+        for (let i = 0; i < theNumbers.length; i++) {
+            const input = Number(prompt('inserisci un numero che hai visto'));
+            if(theNumbers.includes(input)){
+                trueNumbers.push(input);
+            }
+        }
+    }
+}
 
 
 
