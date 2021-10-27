@@ -30,6 +30,12 @@ function randomInterval(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
+function removeDuplicate(params) {
+    return params.filter((value, index) => params.indexOf(value) === index)
+}
+
+
+
 
 let number='';
 for (let i = 0; i < 5; i++) {
@@ -48,10 +54,11 @@ for (let i = 0; i < theNumbers.length; i++) {
     const input = Number(prompt('inserisci un numero che hai visto'));
     if(theNumbers.includes(input)){
         trueNumbers.push(input);
-    }  
+    }
 }
 
-console.log(trueNumbers);
+
+console.log(removeDuplicate(trueNumbers));
 
 
 /* playButton.addEventListener('click', startGame )
