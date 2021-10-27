@@ -11,7 +11,6 @@ Consigli del giorno:
 */
 
 
-
 const numberBox = document.getElementById('container-game')
 const playButton = document.getElementById('button-game')
 const timerBox = document.getElementById('container-timer')
