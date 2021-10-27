@@ -24,6 +24,7 @@ const yourNumbers = document.getElementById('text-box')
 const theNumbers = []
 const trueNumbers = []
 
+
 let seconds = 5;
 let number = '';
 let results = '';
@@ -70,7 +71,7 @@ function incrementSeconds() {
         const iterator = trueNumbers.values();
         for (const value of iterator) {
             console.log(value);
-            fineMessage.innerHTML += value ;
+            fineMessage.innerHTML+= value;
         }
         console.log(theNumbers);
         console.log(removeDuplicate(trueNumbers));  
@@ -92,7 +93,3 @@ playButton.addEventListener('click', function () {
 
 
 
-const iterator = trueNumbers.values();
-for (const value of iterator) {
-  console.log(value);
-}
