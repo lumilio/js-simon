@@ -24,6 +24,15 @@ let seconds = 5;
 let clock;
 
 
+//funzioni utility
+function randomInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function removeDuplicate(params) {
+    return params.filter((value, index) => params.indexOf(value) === index)
+}
+
 
 
 //genero 5 numeri casuali 
@@ -38,27 +47,13 @@ console.log(theNumbers);
 
 
 
-
 //aggiungo interattività al pulsante 
 playButton.addEventListener('click', function () {
+    numberBox.classList.add('d-none')
     playButton.classList.add('d-none')
     timerBox.classList.remove('d-none')
     clock = setInterval(incrementSeconds, 1000); 
 })
-
-
-
-
-//funzioni utility
-function randomInterval(min, max) { // min and max included 
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-function removeDuplicate(params) {
-    return params.filter((value, index) => params.indexOf(value) === index)
-}
-
-
 
 
 
