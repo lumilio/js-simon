@@ -34,6 +34,10 @@ function removeDuplicate(params) {
     return params.filter((value, index) => params.indexOf(value) === index)
 }
 
+function incrementSeconds() {
+    seconds --;
+}
+
 
 
 
@@ -62,7 +66,7 @@ console.log(removeDuplicate(trueNumbers));
 
 
 playButton.addEventListener('click', function () {
-    clock = setInterval(function () {seconds--} , 1000)
+    clock = setInterval(incrementSeconds, 1000);
 })
     
 console.log(clock);
@@ -78,4 +82,4 @@ function incrementSeconds() {
     console.log(seconds);;
 }
 
-let clock = setInterval(incrementSeconds, 1000);
+
