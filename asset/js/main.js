@@ -20,8 +20,9 @@ const fineButton = document.getElementById('fine-game')
 const theNumbers = []
 const trueNumbers = []
 
-let seconds = 30;
+let seconds = 5;
 let clock;
+
 
 
 
@@ -36,6 +37,8 @@ function removeDuplicate(params) {
 
 function incrementSeconds() {
     seconds --;
+    console.log(seconds);
+    timerBox.innerHTML = seconds;
 }
 
 
@@ -53,33 +56,33 @@ console.log(theNumbers);
 
 
 
-for (let i = 0; i < theNumbers.length; i++) {
-    const input = Number(prompt('inserisci un numero che hai visto'));
-    if(theNumbers.includes(input)){
-        trueNumbers.push(input);
+playButton.addEventListener('click', function () {
+    playButton.classList.add('d-none')
+    timerBox.classList.remove('d-none')
+    clock = setInterval(incrementSeconds, 1000);
+    if (seconds == 0) {
+        clearInterval(clock)
+        for (let i = 0; i < theNumbers.length; i++) {
+            const input = Number(prompt('inserisci un numero che hai visto'));
+            if(theNumbers.includes(input)){
+                trueNumbers.push(input);
+            }
+        }
     }
-}
+})
+    
+
+
+
+
+
+
+
 console.log(removeDuplicate(trueNumbers));
 
 
 
 
 
-playButton.addEventListener('click', function () {
-    clock = setInterval(incrementSeconds, 1000);
-})
-    
-console.log(clock);
-
-
-
-
-
-
-
-function incrementSeconds() {
-    seconds --;
-    console.log(seconds);;
-}
 
 
