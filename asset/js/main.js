@@ -17,6 +17,7 @@ const playButton = document.getElementById('button-game')
 const timerBox = document.getElementById('container-timer')
 const fineMessage = document.getElementById('container-text')
 const fineButton = document.getElementById('fine-game')
+const yourNumbers = document.getElementById('text-box')
 
 
 const theNumbers = []
@@ -61,7 +62,8 @@ function incrementSeconds() {
                 trueNumbers.push(input);
             }
         }
-        results = `<div class='text-box'> hai indovinato ${trueNumbers.length} numeri</div>`
+        
+        results = `<div id='text-box'> hai indovinato ${trueNumbers.length} numeri.</div>`
         fineMessage.innerHTML= results;
         fineMessage.classList.remove('d-none')
         console.log(theNumbers);
