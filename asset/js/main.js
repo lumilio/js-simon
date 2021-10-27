@@ -39,11 +39,20 @@ function incrementSeconds() {
     seconds --;
     console.log(seconds);
     timerBox.innerHTML = seconds;
+    if (seconds < 0) {
+        clearInterval(clock)
+        for (let i = 0; i < theNumbers.length; i++) {
+            const input = Number(prompt('inserisci un numero che hai visto'));
+            if(theNumbers.includes(input)){
+                trueNumbers.push(input);
+            }
+        }
+    }
 }
 
 
 
-
+//genero 5 numeri casuali 
 let number='';
 for (let i = 0; i < 5; i++) {
    let input = randomInterval(0, 100)
@@ -55,20 +64,10 @@ console.log(theNumbers);
 
 
 
-
 playButton.addEventListener('click', function () {
     playButton.classList.add('d-none')
     timerBox.classList.remove('d-none')
-    clock = setInterval(incrementSeconds, 1000);
-    if (seconds == 0) {
-        clearInterval(clock)
-        for (let i = 0; i < theNumbers.length; i++) {
-            const input = Number(prompt('inserisci un numero che hai visto'));
-            if(theNumbers.includes(input)){
-                trueNumbers.push(input);
-            }
-        }
-    }
+    clock = setInterval(incrementSeconds, 1000); 
 })
     
 
