@@ -1,7 +1,13 @@
 
+#container-timer{
+    font-size: xx-large;
+    padding: 5rem;
+}
+
 .number-box{
     padding: 1rem;
     margin: 1rem;
     border: 1px solid black;
+    font-size: xx-large;
 }
 

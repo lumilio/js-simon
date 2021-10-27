@@ -21,6 +21,7 @@ const theNumbers = []
 const trueNumbers = []
 
 let seconds = 5;
+let x;
 let clock;
 
 
@@ -28,14 +29,13 @@ let clock;
 function randomInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
-
 function removeDuplicate(params) {
     return params.filter((value, index) => params.indexOf(value) === index)
 }
 
 
 
-//genero 5 numeri casuali 
+//genero 5 numeri casuali e li inserisco in un div
 let number='';
 for (let i = 0; i < 5; i++) {
    let input = randomInterval(0, 100)
@@ -43,23 +43,13 @@ for (let i = 0; i < 5; i++) {
    number=`<div class='number-box'>${input}</div>`
    numberBox.innerHTML += number   
 }
-console.log(theNumbers);
 
 
 
-//aggiungo interattività al pulsante 
-playButton.addEventListener('click', function () {
-    numberBox.classList.add('d-none')
-    playButton.classList.add('d-none')
-    timerBox.classList.remove('d-none')
-    clock = setInterval(incrementSeconds, 1000); 
-})
 
-
-
+// funzione per incrementare il counter
 function incrementSeconds() {
     seconds --;
-    console.log(seconds);
     timerBox.innerHTML = seconds;
     if (seconds <= 0) {
         clearInterval(clock);
@@ -69,12 +59,23 @@ function incrementSeconds() {
                 trueNumbers.push(input);
             }
         }
+        console.log(theNumbers);
+        console.log(removeDuplicate(trueNumbers));  
     }
 }
 
 
 
-console.log(removeDuplicate(trueNumbers));
+//aggiungo interattività al pulsante 
+playButton.addEventListener('click', function () {
+    numberBox.classList.add('d-none')
+    playButton.classList.add('d-none')
+    timerBox.classList.remove('d-none')
+    clock = setInterval(incrementSeconds, 1000) ;
+    console.log(clock);
+})
+
+
 
 
 
