@@ -15,13 +15,16 @@ Consigli del giorno:
 const numberBox = document.getElementById('container-game')
 const playButton = document.getElementById('button-game')
 const timerBox = document.getElementById('container-timer')
+const fineMessage = document.getElementById('container-text')
 const fineButton = document.getElementById('fine-game')
+
 
 const theNumbers = []
 const trueNumbers = []
 
 let seconds = 5;
-let x;
+let number = '';
+let results = '';
 let clock;
 
 
@@ -36,7 +39,6 @@ function removeDuplicate(params) {
 
 
 //genero 5 numeri casuali e li inserisco in un div
-let number='';
 for (let i = 0; i < 5; i++) {
    let input = randomInterval(0, 100)
    theNumbers.push(input)
@@ -59,6 +61,9 @@ function incrementSeconds() {
                 trueNumbers.push(input);
             }
         }
+        results = `<div class='text-box'> hai indovinato${trueNumbers.length} numeri</div>`
+        fineMessage.innerHTML= results;
+        fineMessage.classList.remove('d-none')
         console.log(theNumbers);
         console.log(removeDuplicate(trueNumbers));  
     }
