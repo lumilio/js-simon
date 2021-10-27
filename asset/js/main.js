@@ -61,7 +61,7 @@ function incrementSeconds() {
                 trueNumbers.push(input);
             }
         }
-        results = `<div class='text-box'> hai indovinato${trueNumbers.length} numeri</div>`
+        results = `<div class='text-box'> hai indovinato ${trueNumbers.length} numeri</div>`
         fineMessage.innerHTML= results;
         fineMessage.classList.remove('d-none')
         console.log(theNumbers);
@@ -77,7 +77,6 @@ playButton.addEventListener('click', function () {
     playButton.classList.add('d-none')
     timerBox.classList.remove('d-none')
     clock = setInterval(incrementSeconds, 1000) ;
-    console.log(clock);
 })
 
 
