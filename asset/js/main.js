@@ -16,6 +16,7 @@ const numberBox = document.getElementById('container-game')
 const playButton = document.getElementById('button-game')
 const timerBox = document.getElementById('container-timer')
 const fineMessage = document.getElementById('container-text')
+
 const fineButton = document.getElementById('fine-game')
 const yourNumbers = document.getElementById('text-box')
 
@@ -66,6 +67,11 @@ function incrementSeconds() {
         results = `<div id='text-box'> hai indovinato ${trueNumbers.length} numeri.</div>`
         fineMessage.innerHTML= results;
         fineMessage.classList.remove('d-none')
+        const iterator = trueNumbers.values();
+        for (const value of iterator) {
+            console.log(value);
+            fineMessage.innerHTML += value ;
+        }
         console.log(theNumbers);
         console.log(removeDuplicate(trueNumbers));  
     }
@@ -86,6 +92,7 @@ playButton.addEventListener('click', function () {
 
 
 
-
-
-
+const iterator = trueNumbers.values();
+for (const value of iterator) {
+  console.log(value);
+}
