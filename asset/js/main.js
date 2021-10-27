@@ -20,12 +20,12 @@ const fineButton = document.getElementById('fine-game')
 const theNumbers = []
 const trueNumbers = []
 
-let seconds = 0;
+let seconds = 30;
+let clock;
 
 
 
-
-
+//funzioni utility
 function randomInterval(min, max) { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
@@ -44,7 +44,6 @@ for (let i = 0; i < 5; i++) {
    number=`<div class='number-box'>${input}</div>`
    numberBox.innerHTML += number   
 }
-
 console.log(theNumbers);
 
 
@@ -56,25 +55,27 @@ for (let i = 0; i < theNumbers.length; i++) {
         trueNumbers.push(input);
     }
 }
-
-
 console.log(removeDuplicate(trueNumbers));
 
 
-/* playButton.addEventListener('click', startGame )
 
-function startGame() {
-    playButton.classList.add('d-none')
-    numberBox.classList.add('d-none')
-    for (let i = 0; i < theNumbers.length; i++) {
-        const aswer = prompt('inserisci un numero che hai visto');
-        
-    }
-} */
+
+
+playButton.addEventListener('click', function () {
+    clock = setInterval(function () {seconds--} , 1000)
+})
+    
+console.log(clock);
 
 
 
 
-  
 
-/* setTimeout(myFunction, 30000) */
+
+
+function incrementSeconds() {
+    seconds --;
+    console.log(seconds);;
+}
+
+let clock = setInterval(incrementSeconds, 1000);
