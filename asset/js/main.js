@@ -59,8 +59,8 @@ function incrementSeconds() {
         clearInterval(clock);
         for (let i = 0; i < theNumbers.length; i++) {
             const input = Number(prompt('inserisci un numero che hai visto'));
-            if(theNumbers.includes(input)){
-                trueNumbers.push(input);
+            if(theNumbers.includes(input) && !(trueNumbers.includes(input))){
+                trueNumbers.push(input); 
             }
         }
         
