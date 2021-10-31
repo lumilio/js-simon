@@ -70,10 +70,9 @@ function incrementSeconds() {
         const iterator = trueNumbers.values();
         for (const value of iterator) {
             console.log(value);
-            fineMessage.innerHTML+= value;
+            fineMessage.innerHTML+= value+ ', ';
         }
         console.log(theNumbers);
-        console.log(removeDuplicate(trueNumbers));  
     }
 }
 
